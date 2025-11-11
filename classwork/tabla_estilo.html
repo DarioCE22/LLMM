@@ -1,91 +1,39 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tabla estilo</title>
+  <meta charset="UTF-8">
+  <title>Tabla 2022</title>
   <style>
-    body{
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      padding: 24px;
-      background: #fff;
-      color: #033;
-    }
-    .frame{
-      max-width: 920px;
-      margin: 0 auto;
-    }
-    table.grid{
-      width: 100%;
+    table {
       border-collapse: collapse;
-      table-layout: fixed;
-    }
-    table.grid tr{
-      height: 50px;
-      background: rgba(0, 160, 160, 0.06);
-    }
-    table.grid td.gap{
-      background: transparent;
-      padding: 0;
-    }
-    table.grid td.box{
-      padding: 0;
-      vertical-align: middle;
+      width: 300px;
       text-align: center;
-      background: rgba(0, 160, 160, 0.22);
-      border-radius: 8px;
-      width: 12%;
     }
-    .box-inner{
-      display: block;
-      margin: 10px auto;
-      height: calc(100% - 20px);
-      width: 70%;
-      background: rgba(0, 160, 160, 0.12);
-      border-radius: 6px;
-    }
-    td.box{ height: 100%; }
-    @media (max-width: 560px){
-      table.grid tr{ height: 36px; }
-      table.grid td.box{ width: 16%; }
-      .box-inner{ width: 78%; }
+    td {
+      border: 1px solid black;
+      height: 40px;
     }
   </style>
 </head>
 <body>
-  <div class="frame">
-    <h2>Tabla estilo (reproducción de la imagen)</h2>
-    <table class="grid" aria-label="Tabla de ejemplo estilo">
-      <tr>
-        <td class="gap"></td>
-        <td class="box" rowspan="3"><span class="box-inner"></span></td>
-        <td class="gap"></td>
-        <td class="box" rowspan="3"><span class="box-inner"></span></td>
-        <td class="gap"></td>
-        <td class="box" rowspan="3"><span class="box-inner"></span></td>
-        <td class="gap"></td>
-        <td class="box" rowspan="3"><span class="box-inner"></span></td>
-        <td class="gap"></td>
-        <td class="box" rowspan="3"><span class="box-inner"></span></td>
-        <td class="gap"></td>
-      </tr>
-      <tr>
-        <td class="gap"></td>
-        <td class="gap"></td>
-        <td class="gap"></td>
-        <td class="gap"></td>
-        <td class="gap"></td>
-        <td class="gap"></td>
-      </tr>
-      <tr>
-        <td class="gap"></td>
-        <td class="gap"></td>
-        <td class="gap"></td>
-        <td class="gap"></td>
-        <td class="gap"></td>
-        <td class="gap"></td>
-      </tr>
-    </table>
-  </div>
+
+  <table>
+    <tr>
+      <td colspan="3"><strong>2022</strong></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td rowspan="3"></td>
+    </tr>
+    <tr>
+      <td colspan="2"><strong>FIESTA</strong></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+
 </body>
 </html>
