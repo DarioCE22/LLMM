@@ -1,211 +1,91 @@
 <!doctype html>
 <html lang="es">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Actividad 16 - Horario semanal</title>
-	<style>
-		:root{ --accent:#0aa; --card:#f6fffe; --muted:#667 }
-		body{ font-family: Arial, Helvetica, sans-serif; margin:20px; color:#112; background:#fff }
-		.wrap{ max-width:1000px; margin:0 auto }
-		<!doctype html>
-		<html lang="es">
-		<head>
-		  <meta charset="utf-8">
-		  <meta name="viewport" content="width=device-width, initial-scale=1">
-		  <title>Actividad 16 - Horario semanal</title>
-		  <style>
-		    :root{ --accent:#0aa; --card:#f6fffe; --muted:#667 }
-		    body{ font-family: Arial, Helvetica, sans-serif; margin:20px; color:#112; background:#fff }
-		    .wrap{ max-width:1000px; margin:0 auto }
-		    h1{ text-align:left; margin-bottom:6px }
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<style>
+			body{font-family: Arial, Helvetica, sans-serif; padding:20px; background:#f7f7f7}
+			h1{font-size:20px}
+			.timetable{border-collapse:collapse; width:100%; max-width:900px; background:#fff}
+			.timetable th, .timetable td{border:1px solid #ccc; padding:8px; text-align:center}
+			.timetable th{background:#2b6cb0; color:#fff}
+			.subject{background:#e6f0ff}
+			.long{background:#dfefff}
+			.recreo{background:#ffe6e6; font-weight:bold}
+			.time-col{width:110px; font-weight:600}
+			.note{max-width:900px; margin-top:12px; font-size:14px}
+		</style>
+	</head>
+	<body>
+		<h1>Horario semanal — 1º ASIR</h1>
 
-		    .table-wrap{ overflow-x:auto }
-		    table.timetable{ width:100%; border-collapse:collapse; min-width:780px }
-		    table.timetable th, table.timetable td{ border:1px solid #d0e6e6; padding:10px; vertical-align:middle }
-		    table.timetable th{ background:#eaf8f8; font-weight:700; text-align:center }
+		<table class="timetable" aria-label="Horario semanal">
+			<thead>
+				<tr>
+					<th class="time-col">Hora</th>
+					<th>Lunes</th>
+					<th>Martes</th>
+					<th>Miércoles</th>
+					<th>Jueves</th>
+					<th>Viernes</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="time-col">08:00 - 09:00</td>
+					<td class="subject">Redes</td>
+					<td class="subject">Digitalización</td>
+					<td class="subject" rowspan="2">Redes</td>
+					<td class="subject" rowspan="2">Sistemas Operativos</td>
+					<td class="subject">Sistemas Operativos</td>
+				</tr>
 
-		    td.time{ width:120px; text-align:center; font-weight:700; background:#f7fdfd }
-		    td.break{ text-align:center; background:#fff3cd; font-weight:700 }
+				<tr>
+					<td class="time-col">09:00 - 10:00</td>
+					<td class="subject">Lenguaje de marcas</td>
+					<td class="subject" rowspan="2">IP (2 h)</td>
+					<td class="subject">IP</td>
+				</tr>
 
-		    /* asignaturas visual */
-		    .subject{ padding:8px; border-radius:6px; background:linear-gradient(#ffffff,#f2ffff) }
-		    .small{ font-size:0.9rem; color:var(--muted) }
+				<tr>
+					<td class="time-col">10:00 - 11:00</td>
+					<td class="subject">Sistemas Operativos</td>
+					<td class="subject">Sistemas Operativos</td>
+					<td class="subject">Lenguaje de marcas</td>
+					<td class="subject">Redes</td>
+				</tr>
 
-		    @media (max-width:720px){ table.timetable{ min-width:640px } }
-		  </style>
-		</head>
-		<body>
-		  <div class="wrap">
-		    <h1>Horario semanal</h1>
+				<tr>
+					<td class="time-col">11:00 - 11:30</td>
+					<td class="recreo" colspan="5">RECREO</td>
+				</tr>
 
-		    <div class="table-wrap">
-		      <table class="timetable" aria-label="Horario semanal">
-		        <thead>
-		          <tr>
-		            <th>Hora</th>
-		            <th>Lunes</th>
-		            <th>Martes</th>
-		            <th>Miércoles</th>
-		            <th>Jueves</th>
-		            <th>Viernes</th>
-		          </tr>
-		        </thead>
-		        <tbody>
-		          <tr>
-		            <td class="time">08:00 - 09:00</td>
-		            <td><div class="subject">Planificación y administración de redes<br><span class="small">Inmaculada Rebollo Conde</span></div></td>
-		            <td><div class="subject">Digitalización aplicada<br><span class="small">Javier Pérez</span></div></td>
-		            <td><div class="subject">Planificación y administración de redes<br><span class="small">Inmaculada Rebollo Conde</span></div></td>
-		            <td><div class="subject">Implantación de sistemas operativos<br><span class="small">Susana E. Bueso</span></div></td>
-		            <td><div class="subject">Implantación de sistemas operativos<br><span class="small">Susana E. Bueso</span></div></td>
-		          </tr>
+				<tr>
+					<td class="time-col">11:30 - 12:30</td>
+					<td class="subject">Sistemas Operativos</td>
+					<td class="subject">Sostenibilidad</td>
+					<td class="subject">Sistemas Operativos</td>
+					<td class="subject">Redes</td>
+					<td class="subject">Hardware</td>
+				</tr>
 
-		          <tr>
-		            <td class="time">09:00 - 10:00</td>
-		            <td><div class="subject">Lenguajes de marcas y sistemas de gestión<br><span class="small">Antonia Fabián</span></div></td>
-		            <td rowspan="2"><div class="subject">Itinerario personal para la empleabilidad I<br><span class="small">Belén López Bravo</span></div></td>
-		            <td><div class="subject">Lenguajes de marcas y sistemas de gestión<br><span class="small">Antonia Fabián</span></div></td>
-		            <td><div class="subject">Lenguajes de marcas y sistemas de gestión<br><span class="small">Antonia Fabián</span></div></td>
-		            <td><div class="subject">Lenguajes de marcas y sistemas de gestión<br><span class="small">Antonia Fabián</span></div></td>
-		          </tr>
+				<tr>
+					<td class="time-col">12:30 - 13:30</td>
+					<td class="subject long" rowspan="2">Base de Datos (12:30 - 14:30)</td>
+					<td class="subject">Lenguaje de marcas</td>
+					<td class="subject long" rowspan="2">Base de Datos (12:30 - 14:30)</td>
+					<td class="subject long" rowspan="2">Hardware (12:30 - 14:30)</td>
+					<td class="subject long" rowspan="2">Base de Datos (12:30 - 14:30)</td>
+				</tr>
 
-		          <tr>
-		            <td class="time">10:00 - 11:00</td>
-		            <td><div class="subject">Implantación de sistemas operativos<br><span class="small">Susana E. Bueso</span></div></td>
-		            <td><div class="subject">Lenguajes de marcas y sistemas de gestión<br><span class="small">Antonia Fabián</span></div></td>
-		            <td><div class="subject">Implantación de sistemas operativos<br><span class="small">Susana E. Bueso</span></div></td>
-		          </tr>
+				<tr>
+					<td class="time-col">13:30 - 14:30</td>
+					<td class="subject">Redes</td>
+				</tr>
 
-		          <tr>
-		            <td class="time">11:00 - 11:30</td>
-		            <td class="break" colspan="5">Recreo</td>
-		          </tr>
+			</tbody>
+		</table>
 
-		          <tr>
-		            <td class="time">11:30 - 12:30</td>
-		            <td><div class="subject">Sostenibilidad aplicada<br><span class="small">Rosa M. Palanco</span></div></td>
-		            <td><div class="subject">Sostenibilidad aplicada<br><span class="small">Rosa M. Palanco</span></div></td>
-		            <td><div class="subject">Planificación y administración de redes<br><span class="small">Inmaculada Rebollo</span></div></td>
-		            <td><div class="subject">Fundamentos de hardware<br><span class="small">Mª del Pilar Martínez</span></div></td>
-		            <td rowspan="2"><div class="subject">Fundamentos de hardware<br><span class="small">Mª del Pilar Martínez</span></div></td>
-		          </tr>
-
-		          <tr>
-		            <td class="time">12:30 - 13:30</td>
-		            <td rowspan="2"><div class="subject">Gestión de bases de datos<br><span class="small">Eduardo del Cerro</span></div></td>
-		            <td><div class="subject">Lenguajes de marcas y sistemas de gestión<br><span class="small">Antonia Fabián</span></div></td>
-		            <td rowspan="2"><div class="subject">Gestión de bases de datos<br><span class="small">Eduardo del Cerro</span></div></td>
-		            <td><div class="subject">Fundamentos de hardware<br><span class="small">Mª del Pilar Martínez</span></div></td>
-		          </tr>
-
-		          <tr>
-		            <td class="time">13:30 - 14:30</td>
-		            <td><div class="subject">Revisión / Taller<br><span class="small">Profesor/a</span></div></td>
-		            <td><div class="subject">Taller práctico<br><span class="small">Profesor/a</span></div></td>
-		            <td></td>
-		          </tr>
-
-		        </tbody>
-		      </table>
-		    </div>
-		  </div>
-		</body>
-		</html>
-		body{ font-family: Arial, Helvetica, sans-serif; margin:20px; color:#112; background:#fff }
-		.wrap{ max-width:1000px; margin:0 auto }
-		h1{ text-align:left; margin-bottom:6px }
-
-		.table-wrap{ overflow-x:auto }
-		table.timetable{ width:100%; border-collapse:collapse; min-width:780px }
-		table.timetable th, table.timetable td{ border:1px solid #d0e6e6; padding:10px; vertical-align:middle }
-		table.timetable th{ background:#eaf8f8; font-weight:700; text-align:center }
-
-		td.time{ width:120px; text-align:center; font-weight:700; background:#f7fdfd }
-		td.break{ text-align:center; background:#fff3cd; font-weight:700 }
-
-		/* asignaturas visual */
-		.subject{ padding:8px; border-radius:6px; background:linear-gradient(#ffffff,#f2ffff) }
-		.small{ font-size:0.9rem; color:var(--muted) }
-
-		@media (max-width:720px){ table.timetable{ min-width:640px } }
-	</style>
-</head>
-<body>
-	<div class="wrap">
-		<h1>Horario semanal</h1>
-
-		<div class="table-wrap">
-			<table class="timetable" aria-label="Horario semanal">
-				<thead>
-					<tr>
-						<th>Hora</th>
-						<th>Lunes</th>
-						<th>Martes</th>
-						<th>Miércoles</th>
-						<th>Jueves</th>
-						<th>Viernes</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td class="time">08:00 - 09:00</td>
-						<td><div class="subject">Planificación y administración de redes<br><span class="small">Inmaculada Rebollo Conde</span></div></td>
-						<td><div class="subject">Digitalización aplicada<br><span class="small">Javier Pérez</span></div></td>
-						<td><div class="subject">Planificación y administración de redes<br><span class="small">Inmaculada Rebollo Conde</span></div></td>
-						<td><div class="subject">Implantación de sistemas operativos<br><span class="small">Susana E. Bueso</span></div></td>
-						<td><div class="subject">Implantación de sistemas operativos<br><span class="small">Susana E. Bueso</span></div></td>
-					</tr>
-
-					<tr>
-						<td class="time">09:00 - 10:00</td>
-						<td><div class="subject">Lenguajes de marcas y sistemas de gestión<br><span class="small">Antonia Fabián</span></div></td>
-						<td rowspan="2"><div class="subject">Itinerario personal para la empleabilidad I<br><span class="small">Belén López Bravo</span></div></td>
-						<td><div class="subject">Lenguajes de marcas y sistemas de gestión<br><span class="small">Antonia Fabián</span></div></td>
-						<td><div class="subject">Lenguajes de marcas y sistemas de gestión<br><span class="small">Antonia Fabián</span></div></td>
-						<td><div class="subject">Lenguajes de marcas y sistemas de gestión<br><span class="small">Antonia Fabián</span></div></td>
-					</tr>
-
-					<tr>
-						<td class="time">10:00 - 11:00</td>
-						<td><div class="subject">Implantación de sistemas operativos<br><span class="small">Susana E. Bueso</span></div></td>
-						<td><div class="subject">Lenguajes de marcas y sistemas de gestión<br><span class="small">Antonia Fabián</span></div></td>
-						<td><div class="subject">Implantación de sistemas operativos<br><span class="small">Susana E. Bueso</span></div></td>
-					</tr>
-
-					<tr>
-						<td class="time">11:00 - 11:30</td>
-						<td class="break" colspan="5">Recreo</td>
-					</tr>
-
-					<tr>
-						<td class="time">11:30 - 12:30</td>
-						<td><div class="subject">Sostenibilidad aplicada<br><span class="small">Rosa M. Palanco</span></div></td>
-						<td><div class="subject">Sostenibilidad aplicada<br><span class="small">Rosa M. Palanco</span></div></td>
-						<td><div class="subject">Planificación y administración de redes<br><span class="small">Inmaculada Rebollo</span></div></td>
-						<td><div class="subject">Fundamentos de hardware<br><span class="small">Mª del Pilar Martínez</span></div></td>
-						<td rowspan="2"><div class="subject">Fundamentos de hardware<br><span class="small">Mª del Pilar Martínez</span></div></td>
-					</tr>
-
-					<tr>
-						<td class="time">12:30 - 13:30</td>
-						<td rowspan="2"><div class="subject">Gestión de bases de datos<br><span class="small">Eduardo del Cerro</span></div></td>
-						<td><div class="subject">Lenguajes de marcas y sistemas de gestión<br><span class="small">Antonia Fabián</span></div></td>
-						<td rowspan="2"><div class="subject">Gestión de bases de datos<br><span class="small">Eduardo del Cerro</span></div></td>
-						<td><div class="subject">Fundamentos de hardware<br><span class="small">Mª del Pilar Martínez</span></div></td>
-					</tr>
-
-					<tr>
-						<td class="time">13:30 - 14:30</td>
-						<td><div class="subject">Revisión / Taller<br><span class="small">Profesor/a</span></div></td>
-						<td><div class="subject">Taller práctico<br><span class="small">Profesor/a</span></div></td>
-						<td></td>
-					</tr>
-
-				</tbody>
-			</table>
-		</div>
-	</div>
-</body>
+	</body>
 </html>
 
