@@ -1,91 +1,51 @@
 <!doctype html>
 <html lang="es">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Actividad 12 - HTML styles</title>
+  <style>
+    /* Reglas globales */
+    body{ font-family: Arial, Helvetica, sans-serif; margin:24px; background:#fff }
 
-		body{
-			font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-			background: #ffffff;
-			margin: 24px;
-			color: #024;
-		}
+    .container{ max-width:920px; margin:0 auto }
 
-		.wrapper{ max-width: 920px; margin: 0 auto; }
+    /* Estilos para los 4 bloques */
+    .panel{ padding:18px; margin-bottom:16px; border-radius:8px; color:#fff }
 
-		table.styled{
-			width: 100%;
-			border-collapse: collapse;
-			table-layout: fixed;
-		}
+    /* Encabezados usan Verdana, párrafos Courier */
+    .panel h2{ font-family: Verdana, Geneva, Tahoma, sans-serif; margin:0 0 8px }
+    .panel p{ font-family: "Courier New", Courier, monospace; margin:0 }
 
-		table.styled tr{
-			height: 48px;
-			background: rgba(0,160,160,0.06);
-		}
+    /* Identificadores y combinaciones de estilo */
+    #p1{ background:#2f8f8f; color:#fff; text-align:left }
+    #p2{ background:#8f2f6f; color:#fff; text-align:center }
+    #p3{ background:#2f6f8f; color:#fff; text-align:right }
+    #p4{ background:#8f8f2f; color:#222; text-align:justify }
 
-		td.gap{ padding: 0; background: transparent; }
-
-		td.box{
-			padding: 0;
-			vertical-align: middle;
-			text-align: center;
-			background: rgba(0,160,160,0.20);
-			border-radius: 8px;
-			width: 12%;
-		}
-
-		.box-inner{
-			display:block;
-			margin: 8px auto;
-			width: 70%;
-			height: calc(100% - 16px);
-			background: rgba(0,160,160,0.12);
-			border-radius: 6px;
-		}
-
-		@media (max-width:600px){
-			table.styled tr{ height: 36px; }
-			td.box{ width: 16%; }
-			.box-inner{ width: 78%; }
-		}
-	</style>
+  </style>
 </head>
 <body>
-	<div class="wrapper">
+  <div class="container">
+    <div id="p1" class="panel">
+      <h2 id="h1">Encabezado 1</h2>
+      <p id="para1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur.</p>
+    </div>
 
-		<table class="styled" aria-label="Tabla estilo">
-			<tr>
-				<td class="gap"></td>
-				<td class="box" rowspan="3"><span class="box-inner"></span></td>
-				<td class="gap"></td>
-				<td class="box" rowspan="3"><span class="box-inner"></span></td>
-				<td class="gap"></td>
-				<td class="box" rowspan="3"><span class="box-inner"></span></td>
-				<td class="gap"></td>
-				<td class="box" rowspan="3"><span class="box-inner"></span></td>
-				<td class="gap"></td>
-				<td class="box" rowspan="3"><span class="box-inner"></span></td>
-				<td class="gap"></td>
-			</tr>
-			<tr>
-				<td class="gap"></td>
-				<td class="gap"></td>
-				<td class="gap"></td>
-				<td class="gap"></td>
-				<td class="gap"></td>
-				<td class="gap"></td>
-			</tr>
-			<tr>
-				<td class="gap"></td>
-				<td class="gap"></td>
-				<td class="gap"></td>
-				<td class="gap"></td>
-				<td class="gap"></td>
-				<td class="gap"></td>
-			</tr>
-		</table>
-	</div>
+    <div id="p2" class="panel">
+      <h2 id="h2">Encabezado 2</h2>
+      <p id="para2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur.</p>
+    </div>
+
+    <div id="p3" class="panel">
+      <h2 id="h3">Encabezado 3</h2>
+      <p id="para3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur.</p>
+    </div>
+
+    <div id="p4" class="panel">
+      <h2 id="h4">Encabezado 4</h2>
+      <p id="para4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur.</p>
+    </div>
+  </div>
 </body>
 </html>
