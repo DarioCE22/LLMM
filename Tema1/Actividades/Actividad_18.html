@@ -3,7 +3,6 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Actividad 18 - Directorio de contactos</title>
 	<style>
 		:root{ --accent:#0aa; --muted:#f6ffff; --text:#023 }
 		body{ font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial; margin:24px; color:var(--text) }
@@ -11,7 +10,6 @@
 		h1{ margin-bottom:6px }
 		p.lead{ margin-top:0; color:#246 }
 
-		/* Buscador simple (solo visual) */
 		.search{ display:flex; gap:8px; margin-top:8px }
 		.search input{ flex:1; padding:8px 10px; border:1px solid #cfe; border-radius:6px }
 		.search button{ padding:8px 12px; border-radius:6px; border:1px solid #bfe; background:#eafffa }
@@ -32,7 +30,6 @@
 		.name{ font-weight:600; color:#024 }
 		.muted{ color:#566; font-size:0.95rem }
 
-		/* Footer nota */
 		tfoot td{ background:#f4fbfb; color:#045 }
 
 		@media (max-width:640px){
@@ -42,9 +39,6 @@
 </head>
 <body>
 	<div class="wrap">
-		<h1>Actividad 18</h1>
-		<p class="lead">Directorio de contactos (ejemplo). La tabla muestra avatar, nombre, puesto y contacto; incluye una caja de búsqueda visual y estilos responsivos.</p>
-
 		<div class="search" role="search" aria-label="Buscador de contactos">
 			<input type="search" placeholder="Buscar por nombre o puesto..." aria-label="Buscar contactos">
 			<button type="button">Buscar</button>
@@ -92,11 +86,6 @@
 						<td>+34 644 345 678</td>
 					</tr>
 				</tbody>
-				<tfoot>
-					<tr>
-						<td colspan="5">Nota: tabla de ejemplo para la Actividad 18. Si el enunciado pide campos diferentes o interactividad, indícamelo y lo adapto.</td>
-					</tr>
-				</tfoot>
 			</table>
 		</div>
 	</div>

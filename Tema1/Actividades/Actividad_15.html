@@ -3,7 +3,6 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Actividad 15 - Tabla responsiva con features</title>
 	<style>
 		:root{ --accent:#0aa; --muted:#eef; --text:#012 }
 		body{ font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial; margin:24px; color:var(--text) }
@@ -11,15 +10,13 @@
 		h1{ margin-bottom:6px }
 		p.lead{ margin-top:0; color:#235 }
 
-		/* Tabla responsiva sencilla: mantiene legibilidad en móvil */
 		.table-wrap{ overflow-x:auto; margin-top:16px; }
 		table.feature{
 			width:100%;
 			border-collapse:collapse;
-			min-width:640px; /* fuerza scroll en móviles si es necesario */
+			min-width:640px;
 		}
 
-		/* Definimos columnas con <colgroup> para controlar anchuras */
 		table.feature col.col-number{ width:8% }
 		table.feature col.col-name{ width:34% }
 		table.feature col.col-desc{ width:40% }
@@ -34,16 +31,12 @@
 		}
 		table.feature th{ background: linear-gradient(#eaf8f8,#dff3f3); color:var(--accent); font-weight:700 }
 
-		/* Zebra striping */
 		table.feature tbody tr:nth-child(odd) td{ background: linear-gradient(#ffffff,#f8fffe) }
 
-		/* Hover */
 		table.feature tbody tr:hover td{ background: linear-gradient(#f0fffb,#e6fff6) }
 
-		/* Celda destacada que usa rowspan */
 		.important{ background: linear-gradient(#fff7e6,#fff0d1); color:#5a3b00; font-weight:600 }
 
-		/* Pequeños ajustes para móvil */
 		@media (max-width:640px){
 			table.feature{ min-width:560px }
 			table.feature th, table.feature td{ padding:8px 10px; font-size:14px }
@@ -52,9 +45,6 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Actividad 15</h1>
-		<p class="lead">Tabla demostrativa con caption, <code>colgroup</code>, <code>rowspan</code> y <code>colspan</code>. Es responsiva con scroll horizontal en pantallas pequeñas.</p>
-
 		<div class="table-wrap">
 			<table class="feature" aria-label="Tabla actividad 15">
 				<caption style="caption-side:top; text-align:left; font-weight:700; margin-bottom:8px">Características del producto</caption>
@@ -92,7 +82,6 @@
 						<td><button type="button">Abrir</button></td>
 					</tr>
 					<tr>
-						<!-- La celda de la primera columna y la segunda columna están ocupadas por rowspan -->
 						<td>Exportación de datos (CSV / JSON)</td>
 						<td><button type="button">Exportar</button></td>
 					</tr>
@@ -102,11 +91,6 @@
 						<td colspan="2">Conector con servicios externos (API REST, webhooks)</td>
 					</tr>
 				</tbody>
-				<tfoot>
-					<tr>
-						<td colspan="4" style="text-align:left; padding:10px; background:#f4fbfb; color: #045">Nota: Esta tabla sirve de ejemplo para demostrar combinaciones de celdas y estilos. Adapta los textos según el enunciado real.</td>
-					</tr>
-				</tfoot>
 			</table>
 		</div>
 	</div>

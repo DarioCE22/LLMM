@@ -3,14 +3,12 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Actividad 14 - Tabla de precios</title>
 	<style>
 		body{ font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial; margin:24px; color:#072; }
 		.wrap{ max-width:920px; margin:0 auto }
 		h1{ margin-bottom:6px }
 		p.lead{ margin-top:0; color:#155 }
 
-		/* Tabla de precios (actividad 14) */
 		table.price{
 			width:100%;
 			border-collapse:collapse;
@@ -26,10 +24,8 @@
 		}
 		table.price th{ background:linear-gradient(#eaf7f7,#dff0f0); color:#034; font-weight:700 }
 
-		/* Fila promocional que ocupa todas las columnas */
 		.promo{ background:linear-gradient(#fff7e6,#fff0d1); color:#6a3c00; font-weight:700 }
 
-		/* Columna de precios centrada */
 		.price-amount{ text-align:right; font-weight:700; color:#012 }
 
 		@media (max-width:600px){
@@ -39,9 +35,6 @@
 </head>
 <body>
 	<div class="wrap">
-		<h1>Actividad 14</h1>
-		<p class="lead">Ejemplo: tabla de precios con una fila promocional que utiliza <code>colspan</code> para abarcar todas las columnas.</p>
-
 		<table class="price" aria-label="Tabla de precios - Actividad 14">
 			<thead>
 				<tr>
@@ -71,7 +64,6 @@
 					<td>Plazas limitadas</td>
 				</tr>
 
-				<!-- Fila promocional que ocupa las 4 columnas -->
 				<tr class="promo">
 					<td colspan="4">Oferta especial: 20% de descuento en el Paquete Premium durante esta semana. Código: PROMO20</td>
 				</tr>
@@ -83,11 +75,6 @@
 					<td>En stock</td>
 				</tr>
 			</tbody>
-			<tfoot>
-				<tr>
-					<td colspan="4" style="text-align:left; padding:10px; background:#f4fdfd; color:#045">Nota: Los precios incluyen IVA. Contacta para descuentos por volumen.</td>
-				</tr>
-			</tfoot>
 		</table>
 	</div>
 </body>

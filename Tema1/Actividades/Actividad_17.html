@@ -3,7 +3,6 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Actividad 17 - Ficha de usuario</title>
 	<style>
 		:root{ --accent:#0a9; --muted:#f3ffff; --text:#013 }
 		body{ font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial; margin:24px; color:var(--text) }
@@ -11,7 +10,6 @@
 		h1{ margin-bottom:6px }
 		p.lead{ margin-top:0; color:#246 }
 
-		/* Ficha de usuario usando tabla con rowspan/colspan */
 		table.card{
 			width:100%;
 			border-collapse:separate;
@@ -26,7 +24,6 @@
 			border-radius:8px;
 		}
 
-		/* Imagen/avatare que ocupa 2 filas */
 		.avatar{
 			width:120px; height:120px; border-radius:8px; background:linear-gradient(#e6fbfb,#dff6f6); display:block; margin:0 auto;
 			border:1px solid #cfecec;
@@ -35,11 +32,9 @@
 		.meta{ font-weight:700; color:var(--accent); margin-bottom:6px }
 		.muted{ color:#556; font-size:0.95rem }
 
-		/* Información adicional en dos columnas dentro de la celda */
 		.info-grid{ display:flex; gap:14px; flex-wrap:wrap }
 		.info-grid div{ flex:1 1 200px; }
 
-		/* Botones sencillos */
 		.actions{ display:flex; gap:10px }
 		.actions button{ padding:8px 12px; border-radius:6px; border:1px solid #bfe; background:#eafffa; cursor:pointer }
 
@@ -52,9 +47,6 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Actividad 17</h1>
-		<p class="lead">Ficha de usuario creada con una tabla donde la columna de la izquierda (avatar) ocupa dos filas mediante <code>rowspan</code>, y se usan celdas combinadas para la información principal.</p>
-
 		<table class="card" aria-label="Ficha de usuario">
 			<tr>
 				<td rowspan="2" style="width:140px; text-align:center">
@@ -85,7 +77,6 @@
 				</td>
 			</tr>
 
-			<!-- Bloque de biografía que ocupa toda la anchura usando colspan -->
 			<tr>
 				<td colspan="2">
 					<div style="font-weight:600; margin-bottom:8px">Biografía</div>
@@ -93,7 +84,6 @@
 				</td>
 			</tr>
 
-			<!-- Acciones / notas -->
 			<tr>
 				<td colspan="2" style="text-align:right">
 					<div class="actions">
