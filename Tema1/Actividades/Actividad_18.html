@@ -16,12 +16,18 @@
 
 		.table-wrap{ overflow-x:auto; margin-top:12px }
 		table.contacts{
-			width:100%; border-collapse:collapse; min-width:640px; table-layout:fixed;
+			width:100%; border-collapse:collapse; min-width:640px;
+			table-layout:auto;
 		}
 		table.contacts th, table.contacts td{
-			border:1px solid #d9eef0; padding:10px 12px; text-align:left; vertical-align:middle; background:linear-gradient(#fff,#f7ffff);
+			border:1px solid #d9eef0; padding:10px 12px; vertical-align:middle; background:linear-gradient(#fff,#f7ffff);
 		}
 		table.contacts th{ background:linear-gradient(#e8f8f8,#dff3f3); color:var(--accent); font-weight:700 }
+		table.contacts thead th{ text-align:center }
+		table.contacts thead th:first-child{ text-align:left }
+		table.contacts thead th img{ display:block; margin:6px auto; max-width:64px }
+		table.contacts thead th div{ margin-top:6px; font-weight:700 }
+		table.contacts tbody th{ text-align:left; padding-left:14px }
 
 		tbody tr:nth-child(odd) td{ background: linear-gradient(#ffffff,#f9ffff) }
 		tbody tr:hover td{ background: linear-gradient(#f0fffb,#e6fff6) }
@@ -32,61 +38,58 @@
 
 		tfoot td{ background:#f4fbfb; color:#045 }
 
-		@media (max-width:640px){
-			table.contacts th, table.contacts td{ padding:8px 8px; font-size:14px }
-		}
 	</style>
 </head>
 <body>
 	<div class="wrap">
-		<div class="search" role="search" aria-label="Buscador de contactos">
-			<input type="search" placeholder="Buscar por nombre o puesto..." aria-label="Buscar contactos">
-			<button type="button">Buscar</button>
-		</div>
+			<h1>Comparativa de reproductores MP3</h1>
 
-		<div class="table-wrap">
-			<table class="contacts" aria-label="Lista de contactos">
-				<caption style="caption-side:top; text-align:left; font-weight:700; margin-bottom:8px">Contactos del equipo</caption>
-				<thead>
-					<tr>
-						<th>Avatar</th>
-						<th>Nombre</th>
-						<th>Puesto</th>
-						<th>Email</th>
-						<th>Teléfono</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td><img class="avatar" src="https://via.placeholder.com/48" alt="Avatar Clara"></td>
-						<td><div class="name">Clara López</div><div class="muted">Frontend Developer</div></td>
-						<td>Frontend</td>
-						<td>clara.lopez@example.com</td>
-						<td>+34 612 345 678</td>
-					</tr>
-					<tr>
-						<td><img class="avatar" src="https://via.placeholder.com/48" alt="Avatar Miguel"></td>
-						<td><div class="name">Miguel Ruiz</div><div class="muted">Backend Developer</div></td>
-						<td>Backend</td>
-						<td>miguel.ruiz@example.com</td>
-						<td>+34 622 345 678</td>
-					</tr>
-					<tr>
-						<td><img class="avatar" src="https://via.placeholder.com/48" alt="Avatar Ana"></td>
-						<td><div class="name">Ana García</div><div class="muted">UX / UI Designer</div></td>
-						<td>Diseño</td>
-						<td>ana.garcia@example.com</td>
-						<td>+34 633 345 678</td>
-					</tr>
-					<tr>
-						<td><img class="avatar" src="https://via.placeholder.com/48" alt="Avatar David"></td>
-						<td><div class="name">David Martín</div><div class="muted">Project Manager</div></td>
-						<td>Gestión</td>
-						<td>david.martin@example.com</td>
-						<td>+34 644 345 678</td>
-					</tr>
-				</tbody>
-			</table>
+			<div class="table-wrap">
+				<table class="contacts" summary="Comparativa de reproductores MP3: columnas con características y dos modelos (MP3 mini y MP3 grande).">
+					<caption style="caption-side:top; text-align:left; font-weight:700; margin-bottom:8px">Tabla comparativa de las características técnicas de los reproductores MP3</caption>
+					<thead>
+						<tr>
+							<th scope="col">Característica</th>
+							<th scope="col"><img src="images/mp3_mini.jpg" alt="MP3 mini" style="max-width:64px; display:block; margin:6px auto"><div>MP3 mini</div></th>
+							<th scope="col"><img src="images/mp3_grande.jpg" alt="MP3 grande" style="max-width:64px; display:block; margin:6px auto"><div>MP3 grande</div></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">Capacidad de almacenamiento</th>
+							<td><abbr title="Gigabyte">4 GB</abbr> (<span>~2.000 canciones</span>)<br><abbr title="Gigabyte">8 GB</abbr> (~4.000 canciones)<br><abbr title="Gigabyte">16 GB</abbr> (~7.000 canciones)</td>
+							<td><abbr title="Gigabyte">30 GB</abbr> (~7.500 canciones)<br><abbr title="Gigabyte">80 GB</abbr> (~20.000 canciones)</td>
+						</tr>
+
+						<tr>
+							<th scope="row">Colores</th>
+							<td>
+								<span style="display:inline-block;width:12px;height:12px;background:#000;border-radius:50%;margin:0 4px;vertical-align:middle"></span>
+								<span style="display:inline-block;width:12px;height:12px;background:#777;border-radius:50%;margin:0 4px;vertical-align:middle"></span>
+								<span style="display:inline-block;width:12px;height:12px;background:#ff4081;border-radius:50%;margin:0 4px;vertical-align:middle"></span>
+							</td>
+							<td>
+								<span style="display:inline-block;width:12px;height:12px;background:#000;border-radius:50%;margin:0 4px;vertical-align:middle"></span>
+								<span style="display:inline-block;width:12px;height:12px;background:#fff;border:1px solid #ccc;border-radius:50%;margin:0 4px;vertical-align:middle"></span>
+							</td>
+						</tr>
+
+						<tr>
+							<th scope="row">Pantalla</th>
+							<td>LCD de 3 cm (diagonal) con retroiluminación</td>
+							<td>LCD de 6 cm (diagonal) con retroiluminación</td>
+						</tr>
+
+						<tr>
+							<th scope="row">Tiempo de carga</th>
+							<td>Unas 3 horas</td>
+							<td>Unas 2 horas para alcanzar el 80% de la capacidad</td>
+						</tr>
+
+					</tbody>
+				</table>
+			</div>
+
 		</div>
 	</div>
 </body>
