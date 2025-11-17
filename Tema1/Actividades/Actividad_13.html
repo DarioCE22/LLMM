@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Actividad 13 - Tablas con rowspan/colspan</title>
+	<style>
+		body{ font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial; margin:24px; color:#012; }
+		.container{ max-width:920px; margin:0 auto; }
+		h1{ margin-bottom:8px; }
+		p.lead{ margin-top:0; color:#245; }
+
+		/* Estilos para la tabla de la actividad */
+		table.exercise{
+			width:100%;
+			border-collapse:collapse;
+			table-layout:fixed;
+			margin-top:18px;
+		}
+		table.exercise td, table.exercise th{
+			border:1px solid #cdd;
+			padding:10px 8px;
+			text-align:center;
+			vertical-align:middle;
+			background: linear-gradient(#fbffff,#f2fbfb);
+		}
+		table.exercise th{
+			background: linear-gradient(#e6f7f7,#d9f0f0);
+			font-weight:700;
+			color:#045;
+		}
+
+		/* Celdas destacadas */
+		.highlight{ background: linear-gradient(#dff7f7,#cfecec); }
+
+		@media (max-width:560px){
+			table.exercise td, table.exercise th{ padding:8px 6px; font-size:14px }
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Actividad 13</h1>
+		<p class="lead">Crear una tabla que use <code>rowspan</code> y <code>colspan</code>. El ejemplo siguiente muestra cómo combinar celdas para crear una cabecera principal y una columna que ocupa varias filas.</p>
+
+		<!-- Tabla de ejemplo: horario simple con celdas combinadas -->
+		<table class="exercise" aria-label="Tabla actividad 13">
+			<!-- Fila de cabecera: título que abarca todas las columnas -->
+			<tr>
+				<th colspan="5">Horario semanal - Actividad 13</th>
+			</tr>
+
+			<!-- Segunda fila: días de la semana (5 columnas) -->
+			<tr>
+				<th>Hora</th>
+				<th>Lunes</th>
+				<th>Martes</th>
+				<th>Mié</th>
+				<th>Jue</th>
+			</tr>
+
+			<!-- Filas de horario: la primera columna (Hora) hace rowspan=3 para mostrar bloque -->
+			<tr>
+				<td rowspan="3" class="highlight">8:00 - 10:00</td>
+				<td>Matemáticas</td>
+				<td>Física</td>
+				<td>Lengua</td>
+				<td>Historia</td>
+			</tr>
+			<tr>
+				<td>Biología</td>
+				<td>Química</td>
+				<td>Arte</td>
+				<td>Inglés</td>
+			</tr>
+			<tr>
+				<td colspan="2">Educación Física (doble sesión)</td>
+				<td>Optativa</td>
+				<td>Repaso</td>
+			</tr>
+
+			<!-- Pie con una celda que abarca varias columnas -->
+			<tr>
+				<td colspan="5" style="text-align:left; padding:12px; background:#eef; color:#045">Nota: Esta tabla es un ejemplo que usa <code>rowspan</code> y <code>colspan</code>.</td>
+			</tr>
+		</table>
+
+		<p style="margin-top:12px">Si necesitas que esta tabla refleje un enunciado específico de la actividad 13 del PDF, pega aquí el enunciado y lo adapto exactamente.</p>
+	</div>
+</body>
+</html>

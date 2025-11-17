@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Actividad 16 - Calendario simple</title>
+	<style>
+		:root{ --accent:#0aa; --bg:#f7ffff; --muted:#eef }
+		body{ font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial; margin:24px; color:#023 }
+		.wrapper{ max-width:920px; margin:0 auto }
+		h1{ margin-bottom:6px }
+		p.lead{ margin-top:0; color:#235 }
+
+		/* Tabla tipo calendario */
+		.cal-wrap{ overflow-x:auto; margin-top:16px }
+		table.calendar{
+			width:100%;
+			border-collapse:collapse;
+			min-width:560px; /* permite scroll en pantallas pequeñas */
+			table-layout:fixed;
+		}
+		table.calendar th, table.calendar td{
+			border:1px solid #d5ebeb;
+			padding:10px 8px;
+			text-align:left;
+			vertical-align:top;
+			background: linear-gradient(#ffffff,#f6ffff);
+			height:88px;
+		}
+		table.calendar th{ background: linear-gradient(#eaf8f8,#dff3f3); color:var(--accent); font-weight:700; text-align:center }
+
+		/* Día de la semana en la cabecera */
+		.dow{ font-weight:700; font-size:0.95rem }
+
+		/* Resaltar fines de semana */
+		.weekend{ background: linear-gradient(#fff8f8,#fff0f0) }
+
+		/* Evento dentro de una celda */
+		.event{ display:block; margin-top:6px; padding:6px; background:#eaffef; border-left:4px solid var(--accent); border-radius:4px; font-size:0.92rem }
+
+		/* Mes / título */
+		.month-title{ text-align:center; font-weight:700; padding:14px 0; background:linear-gradient(#f0fbfb,#e7f8f8); border:1px solid #dfeef0; margin-bottom:8px }
+
+		/* Small screens: reduce altura y padding */
+		@media (max-width:640px){
+			table.calendar th, table.calendar td{ padding:8px 6px; height:72px; font-size:14px }
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<h1>Actividad 16</h1>
+		<p class="lead">Ejemplo: calendario de un mes con <code>colspan</code> y <code>rowspan</code> (celdas combinadas) y eventos dentro de celdas.</p>
+
+		<div class="month-title">Noviembre 2022</div>
+
+		<div class="cal-wrap">
+			<table class="calendar" aria-label="Calendario noviembre 2022">
+				<thead>
+					<tr>
+						<th>Dom</th>
+						<th>Lun</th>
+						<th>Mar</th>
+						<th>Mie</th>
+						<th>Jue</th>
+						<th>Vie</th>
+						<th>Sab</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- Primera semana: el mes empieza un martes (ejemplo), así que Dom y Lun quedan vacíos -->
+					<tr>
+						<td class="weekend"></td>
+						<td></td>
+						<td>1<span class="event">Reunión 10:00</span></td>
+						<td>2</td>
+						<td>3</td>
+						<td>4</td>
+						<td class="weekend">5</td>
+					</tr>
+
+					<!-- Segunda semana -->
+					<tr>
+						<td class="weekend">6</td>
+						<td>7</td>
+						<td>8</td>
+						<td>9</td>
+						<td>10</td>
+						<td>11</td>
+						<td class="weekend">12</td>
+					</tr>
+
+					<!-- Tercera semana: demostramos rowspan creando un evento que ocupa dos filas (ejemplo) -->
+					<tr>
+						<td class="weekend">13</td>
+						<td rowspan="2"><strong>14-15</strong><span class="event">Congreso (todo el día)</span></td>
+						<td>15</td>
+						<td>16</td>
+						<td>17</td>
+						<td>18</td>
+						<td class="weekend">19</td>
+					</tr>
+					<tr>
+						<td class="weekend">20</td>
+						<!-- la celda de Lunes está ocupada por rowspan desde la fila anterior -->
+						<td>22</td>
+						<td>23</td>
+						<td>24</td>
+						<td>25</td>
+						<td class="weekend">26</td>
+					</tr>
+
+					<!-- Cuarta semana: usamos colspan para un bloque especial que abarca varios días -->
+					<tr>
+						<td class="weekend">27</td>
+						<td>28</td>
+						<td>29</td>
+						<td colspan="2"><strong>30-1</strong><span class="event">Fin de mes - promoción</span></td>
+						<td></td>
+						<td class="weekend">&nbsp;</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
+

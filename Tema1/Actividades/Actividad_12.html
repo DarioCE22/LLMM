@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Actividad 12 - Tabla estilo</title>
+	<style>
+		/* Estilos para reproducir la imagen: 3 franjas horizontales y 5 cajas verticales */
+		body{
+			font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+			background: #ffffff;
+			margin: 24px;
+			color: #024;
+		}
+
+		.wrapper{ max-width: 920px; margin: 0 auto; }
+
+		table.styled{
+			width: 100%;
+			border-collapse: collapse;
+			table-layout: fixed;
+		}
+
+		/* Las 3 filas son las franjas horizontales (color muy claro) */
+		table.styled tr{
+			height: 48px;
+			background: rgba(0,160,160,0.06);
+		}
+
+		/* Celdas vacías que crean separación entre columnas */
+		td.gap{ padding: 0; background: transparent; }
+
+		/* Columnas "verticales" que ocupan las 3 filas con rowspan */
+		td.box{
+			padding: 0;
+			vertical-align: middle;
+			text-align: center;
+			background: rgba(0,160,160,0.20);
+			border-radius: 8px;
+			width: 12%;
+		}
+
+		/* Una capa interior más clara para el efecto de doble tono */
+		.box-inner{
+			display:block;
+			margin: 8px auto;
+			width: 70%;
+			height: calc(100% - 16px);
+			background: rgba(0,160,160,0.12);
+			border-radius: 6px;
+		}
+
+		@media (max-width:600px){
+			table.styled tr{ height: 36px; }
+			td.box{ width: 16%; }
+			.box-inner{ width: 78%; }
+		}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<h1>Actividad 12</h1>
+		<p>Ejemplo: tabla con 3 franjas horizontales y 5 columnas verticales que ocupan las 3 filas.</p>
+
+		<table class="styled" aria-label="Tabla estilo">
+			<tr>
+				<td class="gap"></td>
+				<td class="box" rowspan="3"><span class="box-inner"></span></td>
+				<td class="gap"></td>
+				<td class="box" rowspan="3"><span class="box-inner"></span></td>
+				<td class="gap"></td>
+				<td class="box" rowspan="3"><span class="box-inner"></span></td>
+				<td class="gap"></td>
+				<td class="box" rowspan="3"><span class="box-inner"></span></td>
+				<td class="gap"></td>
+				<td class="box" rowspan="3"><span class="box-inner"></span></td>
+				<td class="gap"></td>
+			</tr>
+			<tr>
+				<td class="gap"></td>
+				<td class="gap"></td>
+				<td class="gap"></td>
+				<td class="gap"></td>
+				<td class="gap"></td>
+				<td class="gap"></td>
+			</tr>
+			<tr>
+				<td class="gap"></td>
+				<td class="gap"></td>
+				<td class="gap"></td>
+				<td class="gap"></td>
+				<td class="gap"></td>
+				<td class="gap"></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

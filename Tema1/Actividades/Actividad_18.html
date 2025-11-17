@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Actividad 18 - Directorio de contactos</title>
+	<style>
+		:root{ --accent:#0aa; --muted:#f6ffff; --text:#023 }
+		body{ font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial; margin:24px; color:var(--text) }
+		.wrap{ max-width:920px; margin:0 auto }
+		h1{ margin-bottom:6px }
+		p.lead{ margin-top:0; color:#246 }
+
+		/* Buscador simple (solo visual) */
+		.search{ display:flex; gap:8px; margin-top:8px }
+		.search input{ flex:1; padding:8px 10px; border:1px solid #cfe; border-radius:6px }
+		.search button{ padding:8px 12px; border-radius:6px; border:1px solid #bfe; background:#eafffa }
+
+		.table-wrap{ overflow-x:auto; margin-top:12px }
+		table.contacts{
+			width:100%; border-collapse:collapse; min-width:640px; table-layout:fixed;
+		}
+		table.contacts th, table.contacts td{
+			border:1px solid #d9eef0; padding:10px 12px; text-align:left; vertical-align:middle; background:linear-gradient(#fff,#f7ffff);
+		}
+		table.contacts th{ background:linear-gradient(#e8f8f8,#dff3f3); color:var(--accent); font-weight:700 }
+
+		tbody tr:nth-child(odd) td{ background: linear-gradient(#ffffff,#f9ffff) }
+		tbody tr:hover td{ background: linear-gradient(#f0fffb,#e6fff6) }
+
+		.avatar{ width:48px; height:48px; border-radius:6px; object-fit:cover; border:1px solid #cfe }
+		.name{ font-weight:600; color:#024 }
+		.muted{ color:#566; font-size:0.95rem }
+
+		/* Footer nota */
+		tfoot td{ background:#f4fbfb; color:#045 }
+
+		@media (max-width:640px){
+			table.contacts th, table.contacts td{ padding:8px 8px; font-size:14px }
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<h1>Actividad 18</h1>
+		<p class="lead">Directorio de contactos (ejemplo). La tabla muestra avatar, nombre, puesto y contacto; incluye una caja de búsqueda visual y estilos responsivos.</p>
+
+		<div class="search" role="search" aria-label="Buscador de contactos">
+			<input type="search" placeholder="Buscar por nombre o puesto..." aria-label="Buscar contactos">
+			<button type="button">Buscar</button>
+		</div>
+
+		<div class="table-wrap">
+			<table class="contacts" aria-label="Lista de contactos">
+				<caption style="caption-side:top; text-align:left; font-weight:700; margin-bottom:8px">Contactos del equipo</caption>
+				<thead>
+					<tr>
+						<th>Avatar</th>
+						<th>Nombre</th>
+						<th>Puesto</th>
+						<th>Email</th>
+						<th>Teléfono</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><img class="avatar" src="https://via.placeholder.com/48" alt="Avatar Clara"></td>
+						<td><div class="name">Clara López</div><div class="muted">Frontend Developer</div></td>
+						<td>Frontend</td>
+						<td>clara.lopez@example.com</td>
+						<td>+34 612 345 678</td>
+					</tr>
+					<tr>
+						<td><img class="avatar" src="https://via.placeholder.com/48" alt="Avatar Miguel"></td>
+						<td><div class="name">Miguel Ruiz</div><div class="muted">Backend Developer</div></td>
+						<td>Backend</td>
+						<td>miguel.ruiz@example.com</td>
+						<td>+34 622 345 678</td>
+					</tr>
+					<tr>
+						<td><img class="avatar" src="https://via.placeholder.com/48" alt="Avatar Ana"></td>
+						<td><div class="name">Ana García</div><div class="muted">UX / UI Designer</div></td>
+						<td>Diseño</td>
+						<td>ana.garcia@example.com</td>
+						<td>+34 633 345 678</td>
+					</tr>
+					<tr>
+						<td><img class="avatar" src="https://via.placeholder.com/48" alt="Avatar David"></td>
+						<td><div class="name">David Martín</div><div class="muted">Project Manager</div></td>
+						<td>Gestión</td>
+						<td>david.martin@example.com</td>
+						<td>+34 644 345 678</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="5">Nota: tabla de ejemplo para la Actividad 18. Si el enunciado pide campos diferentes o interactividad, indícamelo y lo adapto.</td>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+	</div>
+</body>
+</html>
+
