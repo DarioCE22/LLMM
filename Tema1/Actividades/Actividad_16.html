@@ -22,92 +22,116 @@
 			padding:10px 8px;
 			text-align:left;
 			vertical-align:top;
-			background: linear-gradient(#ffffff,#f6ffff);
-			height:88px;
-		}
-		table.calendar th{ background: linear-gradient(#eaf8f8,#dff3f3); color:var(--accent); font-weight:700; text-align:center }
+			<!doctype html>
+			<html lang="es">
+			<head>
+			  <meta charset="utf-8">
+			  <meta name="viewport" content="width=device-width, initial-scale=1">
+			  <title>Actividad 16 - Horario semanal</title>
+			  <style>
+			    :root{ --accent:#0aa; --card:#f6fffe; --muted:#667 }
+			    body{ font-family: Arial, Helvetica, sans-serif; margin:20px; color:#112; background:#fff }
+			    .wrap{ max-width:1000px; margin:0 auto }
+			    h1{ text-align:left; margin-bottom:10px }
 
-		.dow{ font-weight:700; font-size:0.95rem }
+			    .table-wrap{ overflow-x:auto }
+			    table.timetable{ width:100%; border-collapse:collapse; min-width:780px }
+			    table.timetable th, table.timetable td{ border:1px solid #d0e6e6; padding:10px; vertical-align:middle }
+			    table.timetable th{ background:#eaf8f8; font-weight:700; text-align:center }
 
-		.weekend{ background: linear-gradient(#fff8f8,#fff0f0) }
+			    td.time{ width:110px; text-align:center; font-weight:700; background:#f7fdfd }
+			    td.break{ text-align:center; background:#fff3cd; font-weight:700 }
 
-		.event{ display:block; margin-top:6px; padding:6px; background:#eaffef; border-left:4px solid var(--accent); border-radius:4px; font-size:0.92rem }
+			    /* asignaturas visual */
+			    .subject{ padding:8px; border-radius:6px; background:linear-gradient(#ffffff,#f2ffff) }
+			    .small{ font-size:0.9rem; color:var(--muted) }
 
-		.month-title{ text-align:center; font-weight:700; padding:14px 0; background:linear-gradient(#f0fbfb,#e7f8f8); border:1px solid #dfeef0; margin-bottom:8px }
+			    /* responsive */
+			    @media (max-width:720px){ table.timetable{ min-width:640px } }
+			  </style>
+			</head>
+			<body>
+			  <div class="wrap">
+			    <h1>Horario semanal (ejemplo)</h1>
+			    <p class="small">El recreo está siempre al acabar la tercera hora (fila indicada). Si una asignatura ocupa varias horas consecutivas, las celdas están combinadas.</p>
 
-		@media (max-width:640px){
-			table.calendar th, table.calendar td{ padding:8px 6px; height:72px; font-size:14px }
-		}
-	</style>
-</head>
-<body>
-	<div class="wrapper">
-		<div class="month-title">Noviembre 2022</div>
+			    <div class="table-wrap">
+			      <table class="timetable" aria-label="Horario semanal">
+			        <thead>
+			          <tr>
+			            <th>Hora</th>
+			            <th>Lunes</th>
+			            <th>Martes</th>
+			            <th>Miércoles</th>
+			            <th>Jueves</th>
+			            <th>Viernes</th>
+			          </tr>
+			        </thead>
+			        <tbody>
+			          <tr>
+			            <td class="time">08:00 - 09:00</td>
+			            <td><div class="subject">Planificación y administración de redes<br><span class="small">Inmaculada Rebollo Conde</span></div></td>
+			            <td><div class="subject">Digitalización aplicada<br><span class="small">Javier Pérez</span></div></td>
+			            <td><div class="subject">Planificación y administración de redes<br><span class="small">Inmaculada Rebollo Conde</span></div></td>
+			            <td><div class="subject">Implantación de sistemas operativos<br><span class="small">Susana E. Bueso</span></div></td>
+			            <td><div class="subject">Implantación de sistemas operativos<br><span class="small">Susana E. Bueso</span></div></td>
+			          </tr>
 
-		<div class="cal-wrap">
-			<table class="calendar" aria-label="Calendario noviembre 2022">
-				<thead>
-					<tr>
-						<th>Dom</th>
-						<th>Lun</th>
-						<th>Mar</th>
-						<th>Mie</th>
-						<th>Jue</th>
-						<th>Vie</th>
-						<th>Sab</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td class="weekend"></td>
-						<td></td>
-						<td>1<span class="event">Reunión 10:00</span></td>
-						<td>2</td>
-						<td>3</td>
-						<td>4</td>
-						<td class="weekend">5</td>
-					</tr>
+			          <tr>
+			            <td class="time">09:00 - 10:00</td>
+			            <td><div class="subject">Lenguajes de marcas y sistemas de gestión<br><span class="small">Antonia Fabián</span></div></td>
+			            <td rowspan="2"><div class="subject">Itinerario personal para la empleabilidad I<br><span class="small">Belén López Bravo</span></div></td>
+			            <td><div class="subject">Lenguajes de marcas y sistemas de gestión<br><span class="small">Antonia Fabián</span></div></td>
+			            <td><div class="subject">Lenguajes de marcas y sistemas de gestión<br><span class="small">Antonia Fabián</span></div></td>
+			            <td><div class="subject">Lenguajes de marcas y sistemas de gestión<br><span class="small">Antonia Fabián</span></div></td>
+			          </tr>
 
-					<tr>
-						<td class="weekend">6</td>
-						<td>7</td>
-						<td>8</td>
-						<td>9</td>
-						<td>10</td>
-						<td>11</td>
-						<td class="weekend">12</td>
-					</tr>
+			          <tr>
+			            <td class="time">10:00 - 11:00</td>
+			            <td><div class="subject">Implantación de sistemas operativos<br><span class="small">Susana E. Bueso</span></div></td>
+			            <!-- martes cubierto por rowspan -->
+			            <td><div class="subject">Implantación de sistemas operativos<br><span class="small">Susana E. Bueso</span></div></td>
+			            <td><div class="subject">Lenguajes de marcas y sistemas de gestión<br><span class="small">Antonia Fabián</span></div></td>
+			            <td><div class="subject">Implantación de sistemas operativos<br><span class="small">Susana E. Bueso</span></div></td>
+			          </tr>
 
-					<tr>
-						<td class="weekend">13</td>
-						<td rowspan="2"><strong>14-15</strong><span class="event">Congreso (todo el día)</span></td>
-						<td>15</td>
-						<td>16</td>
-						<td>17</td>
-						<td>18</td>
-						<td class="weekend">19</td>
-					</tr>
-					<tr>
-						<td class="weekend">20</td>
-						<td>22</td>
-						<td>23</td>
-						<td>24</td>
-						<td>25</td>
-						<td class="weekend">26</td>
-					</tr>
+			          <!-- recreo: siempre al acabar tercera hora -->
+			          <tr>
+			            <td class="time">11:00 - 11:30</td>
+			            <td class="break" colspan="5">Recreo</td>
+			          </tr>
 
-					<tr>
-						<td class="weekend">27</td>
-						<td>28</td>
-						<td>29</td>
-						<td colspan="2"><strong>30-1</strong><span class="event">Fin de mes - promoción</span></td>
-						<td></td>
-						<td class="weekend">&nbsp;</td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>
-</body>
-</html>
+			          <tr>
+			            <td class="time">11:30 - 12:30</td>
+			            <td><div class="subject">Sostenibilidad aplicada<br><span class="small">Rosa M. Palanco</span></div></td>
+			            <td><div class="subject">Sostenibilidad aplicada<br><span class="small">Rosa M. Palanco</span></div></td>
+			            <td><div class="subject">Planificación y administración de redes<br><span class="small">Inmaculada Rebollo</span></div></td>
+			            <td><div class="subject">Fundamentos de hardware<br><span class="small">Mª del Pilar Martínez</span></div></td>
+			            <td rowspan="2"><div class="subject">Fundamentos de hardware<br><span class="small">Mª del Pilar Martínez</span></div></td>
+			          </tr>
+
+			          <tr>
+			            <td class="time">12:30 - 13:30</td>
+			            <td rowspan="2"><div class="subject">Gestión de bases de datos<br><span class="small">Eduardo del Cerro</span></div></td>
+			            <td><div class="subject">Lenguajes de marcas y sistemas de gestión<br><span class="small">Antonia Fabián</span></div></td>
+			            <td rowspan="2"><div class="subject">Gestión de bases de datos<br><span class="small">Eduardo del Cerro</span></div></td>
+			            <td><div class="subject">Fundamentos de hardware<br><span class="small">Mª del Pilar Martínez</span></div></td>
+			            <!-- viernes cubierto by rowspan above -->
+			          </tr>
+
+			          <tr>
+			            <td class="time">13:30 - 14:30</td>
+			            <!-- lunes rowspan covers this slot -->
+			            <td><div class="subject">Revisión / Taller<br><span class="small">Profesor/a</span></div></td>
+			            <!-- miércoles rowspan covers this slot -->
+			            <td><div class="subject">Taller práctico<br><span class="small">Profesor/a</span></div></td>
+			            <td><!-- viernes already covered by rowspan --></td>
+			          </tr>
+
+			        </tbody>
+			      </table>
+			    </div>
+			  </div>
+			</body>
+			</html>
 
