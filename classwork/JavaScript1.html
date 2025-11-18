@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Mi primera vez</h1>
+<p>Aqui encendi por primera vez una bombilla.</p>
+
+<script>
+function light(sw) {
+  var pic;
+  if (sw == 0) {
+    pic = "apagado.png"
+  } else {
+    pic = "encendido.png"
+  }
+  document.getElementById('images').src = pic;
+}
+</script>
+
+<img id="images" src="apagado.png" width="100" height="180">
+
+<p>
+<button type="button" onclick="light(1)">encendio</button>
+<button type="button" onclick="light(0)">apagao</button>
+</p>
+
+</body>
+</html>
