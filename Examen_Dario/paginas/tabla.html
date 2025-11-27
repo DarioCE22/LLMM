@@ -5,40 +5,73 @@
     <title>Tabla</title>
 
     <style>
-        table { border:1px solid black; }
-        td, th { border:1px solid black; padding:5px; }
+        table { border:1px solid black; border-collapse: collapse; }
+        td, th { border:1px solid black; padding:8px; }
         div { margin: 10px; padding: 10px; }
     </style>
 </head>
 
 <body>
 
-    <!-- TÍTULO -->
     <div>
-        <h2>Mi Tabla de Datos de CS-GO</h2>
+        <h2>Tabla de Datos del Counter-Strike</h2>
     </div>
 
-    <!-- TABLA CON ROWSPAN Y COLSPAN -->
     <div>
         <table>
+
+            <!-- FILA DE TÍTULO -->
             <tr>
-                <th colspan="3">Ratio de victorias/derrotas</th>
+                <th colspan="4">Victorias, Derrotas y Empates de la Temporada</th>
+            </tr>
+
+            <!-- Fila con rowspan -->
+            <tr>
+                <td rowspan="3">Casual</td>
+                <td>Victorias</td>
+                <td>203</td>
+                <td>Acabado</td>
             </tr>
 
             <tr>
-                <td rowspan="2">47,8% wr</td>
-                <td>47 victorias en casual</td>
-                <td>112 victorias en clasificadas</td>
+                <td>Derrotas</td>
+                <td>58</td>
+                <td>Acabado</td>
             </tr>
 
             <tr>
-                <td>27 derrotas en casual</td>
-                <td>49 derrotas en clasificadas</td>
+                <td>Empates</td>
+                <td>12</td>
+                <td>Acabado</td>
             </tr>
+
+            <!-- SECCIÓN B -->
+            <tr>
+                <td rowspan="2">Clasificatorias</td>
+                <td>Victorias</td>
+                <td>508</td>
+                <td>En proceso</td>
+            </tr>
+
+            <tr>
+                <td>Derrotas</td>
+                <td>231</td>
+                <td>En proceso</td>
+            </tr>
+
+            <!-- COLUMNA CON COLSPAN -->
+            <tr>
+                <th colspan="4">Resumen final de temporada</th>
+            </tr>
+
+            <tr>
+                <td colspan="2">Relacion victoria/derrota</td>
+                <td colspan="2">40,9%</td>
+            </tr>
+
         </table>
     </div>
 
-    <!-- ENLACE PARA VOLVER -->
     <div>
         <a href="../index.html">Volver a la página principal</a>
     </div>
