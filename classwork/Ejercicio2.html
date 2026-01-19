@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio JavaScript</title>
+    <title>Ejercicio JavaScript - Mayúsculas</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -59,17 +59,13 @@
     </style>
 </head>
 <body>
-
     <div class="container">
         <h1>Ejercicio JavaScript</h1>
         <h2>Mensaje de bienvenida personalizado</h2>
-
-        <p>Introduce tu nombre y pulsa el botón para mostrar un mensaje de bienvenida.</p>
-
-        <label for="inputNombre">Nombre:</label>
-        <br>
-        <input type="text" id="inputNombre" placeholder="">
-        <br>
+        <p>Introduce tu nombre y pulsa el botón.</p>
+        
+        <label>Nombre:</label><br>
+        <input type="text" id="inputNombre"><br><br>
 
         <button onclick="saludar()">Saludar</button>
         <button onclick="alert('Maestra ponme un 10')">Aviso</button>
@@ -79,17 +75,16 @@
 
     <script>
         function saludar() {
-            var nombreUsuario = document.getElementById("inputNombre").value;
+            var nombreOriginal = document.getElementById("inputNombre").value;
+            var caja = document.getElementById("resultado");
+            var nombreMayuscula = nombreOriginal.toUpperCase();
 
-            var cajaResultado = document.getElementById("resultado");
-
-            if (nombreUsuario.trim() === "") {
-                cajaResultado.innerHTML = "Por favor, escribe un nombre.";
+            if (nombreOriginal === "") {
+                caja.innerHTML = "Por favor, escribe un nombre.";
             } else {
-                cajaResultado.innerHTML = "¡Bienvenido/a, <strong>" + nombreUsuario + "</strong>!";
+                caja.innerHTML = "¡Bienvenido/a, <strong>" + nombreMayuscula + "</strong>!";
             }
         }
     </script>
-
 </body>
 </html>
