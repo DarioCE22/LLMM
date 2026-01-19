@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        
+        h1 {
+            color: #333;
+        }
+
+        h2 {
+            color: #444;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 600px;
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        button {
+            padding: 5px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 5px;
+            background-color: #e0e0e0;
+            border: 1px solid #999;
+            border-radius: 3px;
+        }
+
+        button:hover {
+            background-color: #d0d0d0;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e6e6fa;
+            border-left: 5px solid #ccc;
+            min-height: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Ejercicio JavaScript</h1>
+        <h2>Mensaje de bienvenida personalizado</h2>
+
+        <p>Introduce tu nombre y pulsa el botón para mostrar un mensaje de bienvenida.</p>
+        <p>parrafo 2.</p>
+        <p>Parrafo 3</p>
+
+        <label for="inputNombre">Nombre:</label>
+        <br>
+        <input type="text" id="inputNombre" placeholder="">
+        <br>
+
+        <button onclick="saludar()">Saludar</button>
+        <button onclick="alert('Funcionalidad del botón Elige aún no definida')">Elige</button>
+
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function saludar() {
+            var nombreUsuario = document.getElementById("inputNombre").value;
+
+            var cajaResultado = document.getElementById("resultado");
+
+            if (nombreUsuario.trim() === "") {
+                cajaResultado.innerHTML = "Por favor, escribe un nombre.";
+            } else {
+                cajaResultado.innerHTML = "¡Bienvenido/a, <strong>" + nombreUsuario + "</strong>!";
+            }
+        }
+    </script>
+
+</body>
+</html>
