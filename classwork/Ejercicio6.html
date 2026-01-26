@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenar Aleatorios</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 500px;
+        }
+
+        h1 { color: #333; margin-bottom: 5px; }
+        p { color: #666; margin-bottom: 30px; }
+
+        .contenedor-numeros {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .bola {
+            width: 80px;
+            height: 80px;
+            background-color: #e6e6fa;
+            border: 3px solid #6a5acd;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+            font-weight: bold;
+            color: #333;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        button {
+            padding: 12px 30px;
+            font-size: 18px;
+            background-color: #6a5acd;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        button:hover {
+            background-color: #5848c2;
+            transform: scale(1.05);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🔢 Ejercicio raro de la maestra</h1>
+        <p>Genera 3 números aleatorios de dos cifras y los ordena por si tu edad no supera las dos cifras.</p>
+
+        <div class="contenedor-numeros">
+            <div id="num1" class="bola">--</div>
+            <div id="num2" class="bola">--</div>
+            <div id="num3" class="bola">--</div>
+        </div>
+
+        <button onclick="generarYOrdenar()">Dale</button>
+    </div>
+
+    <script>
+        function generarYOrdenar() {
+            var listaNumeros = [];
+
+            for (var i = 0; i < 3; i++) {
+                var aleatorio = Math.floor(Math.random() * 90) + 10;
+
+                listaNumeros.push(aleatorio);
+            }
+
+            listaNumeros.sort(function(a, b) {
+                return a - b;
+            });
+
+            document.getElementById("num1").innerHTML = listaNumeros[0];
+            document.getElementById("num2").innerHTML = listaNumeros[1];
+            document.getElementById("num3").innerHTML = listaNumeros[2];
+        }
+    </script>
+
+</body>
+</html>

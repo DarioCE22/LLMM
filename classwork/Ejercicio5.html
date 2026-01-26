@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Año Bisiesto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            max-width: 500px;
+            text-align: center;
+        }
+
+        h1 { color: #333; }
+        p { color: #666; margin-bottom: 20px; }
+
+        input[type="number"] {
+            padding: 10px;
+            font-size: 18px;
+            width: 150px;
+            text-align: center;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 25px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #resultado {
+            margin-top: 25px;
+            padding: 15px;
+            background-color: #e6e6fa;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 18px;
+            min-height: 25px;
+        }
+        
+        .es-bisiesto { color: green; }
+        .no-bisiesto { color: #d9534f; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>📅 ¿Es año bisiesto?</h1>
+        <p>Introduce un año para saber si tiene 366 días.</p>
+
+        <input type="number" id="inputAnio" placeholder="Ej: 2024">
+        
+        <button onclick="comprobarBisiesto()">Comprobar</button>
+
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function comprobarBisiesto() {
+            var valor = document.getElementById("inputAnio").value;
+            var cajaResultado = document.getElementById("resultado");
+
+            if (valor === "") {
+                cajaResultado.innerHTML = "Por favor, escribe un año.";
+                cajaResultado.className = "";
+                return;
+            }
+
+            var anio = parseInt(valor);
+            
+            if ((anio % 4 === 0 && anio % 100 !== 0) || (anio % 400 === 0)) {
+                cajaResultado.innerHTML = "✅ El año " + anio + " ES bisiesto.";
+                cajaResultado.className = "es-bisiesto";
+            } else {
+                cajaResultado.innerHTML = "❌ El año " + anio + " NO es bisiesto.";
+                cajaResultado.className = "no-bisiesto";
+            }
+        }
+    </script>
+
+</body>            
+</html>
