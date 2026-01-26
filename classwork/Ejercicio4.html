@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Sumas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 500px;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .subtitulo {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .ecuacion {
+            font-size: 40px;
+            font-weight: bold;
+            color: #444;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+
+        input[type="number"] {
+            font-size: 24px;
+            padding: 5px;
+            width: 80px;
+            text-align: center;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .botones {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-comprobar {
+            background-color: #b0c4de;
+            color: #000;
+            border: 1px solid #999;
+        }
+        .btn-comprobar:hover { background-color: #9cb0ca; }
+
+        .btn-nuevo {
+            background-color: #e0e0e0;
+            color: #000;
+            border: 1px solid #999;
+        }
+        .btn-nuevo:hover { background-color: #d0d0d0; }
+
+        #mensaje {
+            margin-top: 25px;
+            font-size: 18px;
+            min-height: 30px;
+        }
+
+        .correcto { color: green; }
+        .incorrecto { color: red; }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🧮 Juego de Sumar</h1>
+        <p class="subtitulo">Escribe el resultado correcto</p>
+
+        <div class="ecuacion">
+            <span id="num1">0</span>
+            <span>+</span>
+            <span id="num2">0</span>
+            <span>=</span>
+            <input type="number" id="respuestaUsuario">
+        </div>
+
+        <div class="botones">
+            <button class="btn-comprobar" onclick="comprobar()">Comprobar</button>
+            <button class="btn-nuevo" onclick="nuevoNumero()">Nuevo número</button>
+        </div>
+
+        <div id="mensaje"></div>
+    </div>
+
+    <script>
+        var numeroA, numeroB;
+
+        window.onload = function() {
+            nuevoNumero();
+        };
+
+        function nuevoNumero() {
+            numeroA = Math.floor(Math.random() * 10) + 1; 
+            numeroB = Math.floor(Math.random() * 10) + 1;
+
+            document.getElementById("num1").innerHTML = numeroA;
+            document.getElementById("num2").innerHTML = numeroB;
+
+            document.getElementById("respuestaUsuario").value = "";
+            document.getElementById("mensaje").innerHTML = "";
+
+            document.getElementById("respuestaUsuario").focus();
+        }
+
+        function comprobar() {
+            var respuesta = document.getElementById("respuestaUsuario").value;
+            var mensajeDiv = document.getElementById("mensaje");
+
+            if (respuesta === "") {
+                mensajeDiv.innerHTML = "Por favor, escribe un número.";
+                mensajeDiv.className = "";
+                return;
+            }
+
+            var sumaCorrecta = numeroA + numeroB;
+
+            if (parseInt(respuesta) === sumaCorrecta) {
+                mensajeDiv.innerHTML = "✅ Oleeeee su payito";
+                mensajeDiv.className = "correcto";
+            } else {
+                mensajeDiv.innerHTML = "❌ Vaya gitano mas malo estas hecho";
+                mensajeDiv.className = "incorrecto";
+            }
+        }
+    </script>
+
+</body>
+</html>
