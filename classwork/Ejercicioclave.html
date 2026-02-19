@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Validar Contraseña</title>
+    <style>
+body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 90%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #28a745; /* Verde */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        #resultado {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 4px;
+            display: none; /* Oculto al inicio */
+            font-weight: bold;
+        }
+
+        .valido {
+            display: block !important;
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .invalido {
+            display: block !important;
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="caja">
+        <h3>Registro</h3>
+        
+        <label>Usuario:</label>
+        <input type="text" id="usu">
+
+        <label>Contraseña:</label>
+        <input type="text" id="pass">
+
+        <button onclick="validar()">Comprobar</button>
+
+        <p id="mensaje"></p>
+    </div>
+
+    <script>
+        function validar() {
+            var clave = document.getElementById("pass").value;
+            var texto = document.getElementById("mensaje");
+
+            // 1. Creamos "Cajas"
+            var numMayusculas = 0;
+            var numMinusculas = 0;
+            var numNumeros = 0;
+
+            // 2. EL BUCLE
+            for (var i = 0; i < clave.length; i++) {
+                var letra = clave[i];
+
+                // Si la letra es mayúscula, sumamos 1 al contador
+                if (letra >= 'A' && letra <= 'Z') {
+                    numMayusculas = numMayusculas + 1;
+                }
+                // Si la letra es minúscula, sumamos 1 al contador
+                else if (letra >= 'a' && letra <= 'z') {
+                    numMinusculas = numMinusculas + 1;
+                }
+                // Si es un número, sumamos 1 al contador
+                else if (letra >= '0' && letra <= '9') {
+                    numNumeros = numNumeros + 1;
+                }
+            }
+
+            // 3. Comprobamos los resultados finales
+            if (clave.length < 8) {
+                texto.innerHTML = "❌ Error: Debe tener 8 caracteres o más.";
+                texto.style.color = "red";
+            } 
+            else if (numMayusculas === 0) {
+                texto.innerHTML = "❌ Error: Te falta una mayúscula.";
+                texto.style.color = "red";
+            }
+            else if (numMinusculas === 0) {
+                texto.innerHTML = "❌ Error: Te falta una minúscula.";
+                texto.style.color = "red";
+            }
+            else if (numNumeros === 0) {
+                texto.innerHTML = "❌ Error: Te falta un número.";
+                texto.style.color = "red";
+            }
+            else {
+                // Si tiene 8 letras y todos los contadores son mayores que 0, es válida
+                texto.innerHTML = "✅ ¡Contraseña perfecta!";
+                texto.style.color = "green";
+            }
+        }
+    </script>
+
+</body>
+</html>
