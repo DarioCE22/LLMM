@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validador de DNI</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e0e5ec;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .carnet {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 400px;
+            text-align: center;
+            border-top: 10px solid #104479;
+        }
+
+        h1 {
+            color: #104479;
+            margin-top: 0;
+        }
+
+        .icono-dni {
+            font-size: 60px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            color: #666;
+            font-weight: bold;
+            margin-left: 10%;
+        }
+
+        input[type="text"] {
+            width: 80%;
+            padding: 12px;
+            font-size: 18px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #104479;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #0d3660;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            padding: 15px;
+            font-weight: bold;
+            border-radius: 5px;
+            min-height: 20px;
+        }
+
+        .valido {
+            color: #155724;
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+        }
+
+        .invalido {
+            color: #721c24;
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="carnet">
+        <span class="icono-dni">🪪</span>
+        <h1>Verificar DNI</h1>
+        <p>Introduce el DNI sin guiones ni espacios.</p>
+
+        <label>Número de DNI:</label>
+        <input type="text" id="inputDNI" placeholder="12345678A" maxlength="9">
+
+        <button onclick="validarDNI()">Comprobar</button>
+
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function validarDNI() {
+            var campo = document.getElementById("inputDNI");
+            var resultado = document.getElementById("resultado");
+            
+            var dni = campo.value.toUpperCase();
+
+            var formatoValido = /^\d{8}[A-Z]$/;
+
+            if (!formatoValido.test(dni)) {
+                resultado.innerHTML = "⚠️ El formato debe ser 8 números y 1 letra.";
+                resultado.className = "invalido";
+                return;
+            }
+
+            var numero = dni.substring(0, 8);
+            var letraUsuario = dni.substring(8, 9);
+
+            var letrasPosibles = "TRWAGMYFPDXBNJZSQVHLCKE";
+            
+            var indice = parseInt(numero) % 23;
+            
+            var letraCorrecta = letrasPosibles.charAt(indice);
+
+            if (letraUsuario === letraCorrecta) {
+                resultado.innerHTML = "✅ El DNI es VÁLIDO.";
+                resultado.className = "valido";
+            } else {
+                resultado.innerHTML = "❌ La letra es incorrecta. Debería ser la '" + letraCorrecta + "'.";
+                resultado.className = "invalido";
+            }
+        }
+    </script>
+
+</body>
+</html>
